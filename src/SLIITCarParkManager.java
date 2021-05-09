@@ -229,6 +229,7 @@ public class SLIITCarParkManager implements CarParkManager{
 		line();
 		for(int i = 0; i<slots.size(); i++) {
 			printDetails(slots.get(i));
+			System.out.println("");
 		}
 	}
 	
