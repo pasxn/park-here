@@ -31,7 +31,7 @@ public class SLIITCarParkManager implements CarParkManager{
 			line();
 			System.out.println("Press the labelled key on your keybord\n");
 			System.out.println("Enter a vehicle [e]");
-			System.out.println("Remove a /vehicle [r]");
+			System.out.println("Remove a vehicle [r]");
 			System.out.println("Search a vehicle [s]");
 			System.out.println("Get the no. of empty slots [n]");
 			System.out.println("Get the no. of occupied slots [o]");
@@ -183,7 +183,7 @@ public class SLIITCarParkManager implements CarParkManager{
 		for(int i = 0; i<slots.size(); i++) {
 			Vehicle tmp = slots.get(i);
 			if(tmp.getIDplate().equals(licenseTmp)) {
-				System.out.println("\nThe "+tmp.getClass()+", ["+tmp.getIDplate()+"]"+" is leaving the parking lot.\n" );
+				System.out.println("\nThe "+tmp.getClass().toString().substring(tmp.getClass().toString().lastIndexOf(" ")+1)+" is leaving the parking lot.\n" );
 				System.out.println("Date entered :" + tmp.getDateTime().getDate());
 				System.out.println("Time entered :" + tmp.getDateTime().getTime());
 				slots.remove(tmp);
@@ -220,9 +220,11 @@ public class SLIITCarParkManager implements CarParkManager{
 					}else if(key.contains("ThreeWheel")) {
 						System.out.println(slots.get(i).isTaxi());
 					}
-					line();
-			}else warn();
+			}else {
+				System.out.println("Invalid license plate number! Input again.");
+			}
 		}
+		
 	}
 	
 	
@@ -232,6 +234,7 @@ public class SLIITCarParkManager implements CarParkManager{
 			printDetails(slots.get(i));
 			System.out.println("");
 		}
+		if (slots.size() == 0) System.out.println("The car park is empty at the moment!");
 	}
 	
 	
