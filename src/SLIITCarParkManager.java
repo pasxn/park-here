@@ -203,6 +203,7 @@ public class SLIITCarParkManager implements CarParkManager{
 	public void searchVehicles() {
 		System.out.print("Enter the license plate of the vehicle: ");
 		String licenseTmp = sc.nextLine();
+		System.out.println("");
 		
 		for(int i = 0; i<slots.size(); i++) {
 			if(slots.get(i).getIDplate().equals(licenseTmp)) {
