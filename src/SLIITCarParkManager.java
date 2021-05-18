@@ -283,7 +283,7 @@ public class SLIITCarParkManager implements CarParkManager{
 	}
 	
 	// a clear using ASCII Escape codes
-	//(only works in the linux/macos terminal emulator, should check in cmd before submitting)
+	//(only works in the linux/macos terminal emulator and windows dos front)
 	//shows some weird symbols in Eclipse console 
     public static void clearConsole(){
     	System.out.print("\033[H\033[2J");
